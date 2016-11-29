@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>响应式轮播图</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+      <link rel="stylesheet" href="dist/css/bootstrap.min.css" media="screen" title="no title">
+      <link rel="stylesheet" href="style.css" media="screen" title="no title">
+      <style type="text/css">
+        body{
+        	height: 1500px;
+        }
+      	.jumbotron{
+      		background: url(images/ny2.jpg) center center no-repeat;
+      		background-size: 100% ;
+      		margin-bottom: 20px;
+      	}
+      	.jumbotron h1{
+      		color: black;
+      		font-size: 32px;
+      	}
+      	.jumbotron h4{
+      		color: black;
+      		font-size: 26px;
+      	}
+      	#toTop{
+      		position: fixed;
+      		right: 10px;
+      		bottom: 10px;
+      		width: 50px;
+      		height: 50px;
+      		background: #70A1D7;
+      		color: white;
+      		font-size: 16px;
+      		text-align: center;
+      		line-height: 50px;
+      		opacity: 0;
+      		transition: all 1s;
+      	}
+      	#box{
+      		position: relative;
+      	}
+      	#content{
+				width: 100%;
+			}
+			#content>ul{
+				width: 25%;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				float: left;
+			}
+			#content>ul li{
+				margin-bottom: 3px;
+				position: relative;
+				overflow: hidden;
+				/*border: 1px solid red;*/
+			}
+			#content>ul li:hover{
+				cursor: pointer;
+			}
+			.crDiv{
+				background: rgba(0,0,0,.7);
+				position: absolute;
+				left: 0;
+				top: -98%;
+				width: 100%;
+				height: 98%;
+				transition: all 1s linear;
+			}
+			.span{
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				/*opacity: .3;*/
+			}
+			.scaleone{
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 10;
+				background: rgba(0,0,0,.6);
+			}
+			.selectImg{
+				border:10px solid white;
+				border-color: #FFD6A6;
+				height:80%;
+				margin:5% auto;
+				display: block;
+			}
+			.jieshao{
+				padding: 10px 30px;
+			}
+			.jieshao h2{
+				font-size: 36px;
+				color: forestgreen;
+				text-align: center;
+			}
+			.jieshao p{
+				line-height: 34px;
+				font-size: 24px;
+				color: darkblue;
+				text-indent: 2em;
+				padding: 15px 150px;
+			}
+			.jieshao p span{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				line-height: 30px;
+				font-size: 28px;
+				color: #0EB29A;
+			}
+			.clearfix:after,.clearfix:before{
+				content: '';
+				display: table;
+			}
+			.clearfix:after{
+				clear: both;
+			}
+      	
+      </style>
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">
+            魏松
+         </a>
+         <button type="button" name="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+        </div>
+        <p class="navbar-text">
+        	   我就是我不一样的烟火 🎆, fighting!
+        </p>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right" style="margin-top:0">
+            <li><a href="index.html">
+              <span class="glyphicon glyphicon-home"></span>
+              我的首页</a></li>
+            <li class="active"><a href="hometown.html">
+              <span class="glyphicon glyphicon-fire"></span>
+              我的家乡</a></li>
+            <li><a href="information.html">
+              <span class="glyphicon glyphicon-user"></span>
+              自我介绍</a></li>
+            <!--<li><a href="case.html">
+              <span class="glyphicon glyphicon-bell"></span>
+              学习经历</a></li>-->
+            <li><a href="about.html">
+              <span class="glyphicon glyphicon-tree-conifer"></span>
+              工作经历</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <hgroup>
+          <h1>我的家乡---南阳</h1>
+          <h4>关于我的家乡南阳的图片</h4>
+        </hgroup>
+      </div>
+    </div>
+
+    <div id="content" class="clearfix">
+    	<div class="jieshao">
+    		<h2>关于南阳</h2>
+    		<p>
+    			<span>南都帝乡，五圣故里</span>
+    			千年玉都，中国水城，卧龙之地，灵秀南阳！
+南阳人杰地灵，人才辈出，历史上曾孕育出医圣张仲景、商圣范蠡、科圣张衡，谋圣姜子牙及“智圣”诸葛亮，更滋养了哲学家冯友兰、军事家彭雪枫、文学家姚雪垠、科技发明家王永民、作家二月河等当代名人。
+    		</p>
+    		<p>
+    			<span>南阳卧龙岗景区</span>
+    			位于中国历史文化名城河南省南阳市城西4公里处，卧龙岗南濒白水，北障紫峰，遥连嵩岳，山水相依，景留四时。这里岗峦起伏，曲折回旋，势如卧龙，其源发端于嵩山之南，绵延数百里，连接南阳古城西北紫山继续南下，至此岗地势隆起，截然而住，回旋如巢，南阳诸葛庐在其内，时人以孔明为卧龙，因号其岗。
+    		</p>
+    		<p>
+    			<span>南阳玉</span>
+    			又叫独山玉，独山玉是中国四大名玉之一，有南阳翡翠之称，是一种重要的玉雕材料 。产于河南南阳的独山，也称“南阳玉”或“河南玉”，也有简称为“独玉”的。独山是距中国历史文化名城南阳最近的省级森林公园，国家矿山公园和旅游风景区，出产独玉。
+    			独山玉因多色而闻名，因俏色而珍贵，因斑斓而魅力无穷。七种主题色和数十种过渡色足以使其傲立玉林。白玉以其温润凝腻的手感一直占据着玉器把玩件和牌子的市场，翡翠则以俏丽灵动的富贵气息占据着首饰配饰类玉器市场，这就给独山玉一个发展空间。	独山玉玉质坚韧微密，细腻柔润，色泽斑驳陆离，温润，有绿、蓝、黄、紫、红、白六种色素，77个色彩类型，是工艺美术雕件的重要玉石原料。
+    	    </p>
+    	    <p>
+    	    	<span> 南阳白河</span>
+    	    	南阳白河(古称淯水）是河南省第三大城市南阳市的母亲河，源于伏牛山玉皇顶东麓，经南阳最终流至湖北襄樊注入长江最大支流汉水。白河为古老的常年河流，流经河南省界内全长329公里，流域面积12500平方公里，在南阳市区内流经河段总长25公里，自东北向西南，自成半环形穿市而过，似一条银练素带，波光闪闪，堤、林、路、岛、桥、水相互协调，相映成趣，形成了具有独具特色的自然生态系统，成为南阳市区一道亮丽的旅游风景线，白河国家城市湿地公园也成为了南阳的一张城市名片。
+    	    </p>
+    	    
+    	</div>
+    <div id="content" class="clearfix">
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+	</div>
+	
+	
+   
+   
+
+
+
+
+
+   <div class="footer" id="footer">
+     <div class="container">
+       <p>
+         企业培训 | 合作事宜 | ©️版权投诉
+       </p>
+       <p>
+         苏 ICP 备123455. ©️ 2009-2016 万事皆空 .Powered by bootstrap
+       </p>
+     </div>
+   </div>
+    <script type="text/javascript">
+         	var oBox = document.querySelector('#content');
+			var aUl = oBox.getElementsByTagName('ul');		
+			oBox.style.margin = '0 auto';
+			
+			
+//			window.onscroll = function () {
+//				var visibleH = window.innerHeight || document.documentElement.clientHeight;
+//				var scrollH = document.body.scrollTop || document.documentElement.scrollTop;
+//				var h1 = visibleH + scrollH;
+//				var h2 = document.body.scrollHeight;
+//				if(h1 >= 0.8 * h2) {
+//						if(total <= 80) {
+//							add(10);
+//						} else {
+//							tishi();
+//						}	
+//				}
+//				
+//			}
+			
+			function tishi() {
+				myAlert.style.display = 'block';
+				myAlert.innerHTML = '已经加载全部';
+			}
+
+			function add() {
+				for(var i = 1; i < 33; i ++) {
+					createLi(i);
+				}
+			}
+			add();
+			
+			var aLi = oBox.getElementsByTagName('li');
+			for(var i = 0; i < aLi.length; i ++) {
+				aLi[i].onclick = function () {
+					var scaleOne = document.createElement('div');
+					scaleOne.className = 'scaleone';
+					scaleOne.style.width = 100 + '%';
+					scaleOne.style.height = 100 + '%';
+					document.body.appendChild(scaleOne);
+					var oImg = document.createElement('img');
+					oImg.src = this.lastElementChild.src;
+					console.log(this.lastElementChild.src)
+					oImg.className = 'selectImg';
+					scaleOne.appendChild(oImg);
+					scaleOne.onclick = function () {
+						document.body.removeChild(this);
+					}
+				}
+			}
+			
+			function createLi(num) {
+				var oLi = document.createElement('li');
+				var div = document.createElement('div');
+					div.className = 'crDiv';
+					var span = document.createElement('span');
+					span.className = 'span';
+					div.appendChild(span);
+				    oLi.appendChild(div);
+				var index = 0;
+				
+				var high = randomNum(250,450);
+				oLi.style.height = high + 'px';
+				oLi.style.width = 98 + '%';
+				oLi.style.position = 'relative';
+				
+				
+				var img = document.createElement('img');
+				img.src = 'nanyang/'+ num +'.jpg';
+				img.style.width = '100%';
+				img.style.height = '98%';
+				oLi.appendChild(img);
+				for(var j = 0; j < aUl.length; j ++) {
+					if(aUl[j].offsetHeight < aUl[index].offsetHeight) {
+						index = j;
+					}
+					
+				}
+				aUl[index].appendChild(oLi);
+				
+				oLi.onmouseover = function () {
+					div.style.top = 0 + 'px';	
+				}
+				oLi.onmouseout = function () {
+					div.style.top = -100 + '%';
+				}
+				
+			}
+			
+		
+			function randomNum(x,y){
+				return Math.floor(Math.random() * ( y - x + 1) + x);
+			}
+    </script>
+
+   
+  
+   	
+
+  </body>
+</html>

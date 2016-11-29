@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>响应式轮播图</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+      <link rel="stylesheet" href="dist/css/bootstrap.min.css" media="screen" title="no title">
+      <link rel="stylesheet" href="style.css" media="screen" title="no title">
+      <link rel="stylesheet" type="text/css" href="animate.css"/>
+      <link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/timeline.css">
+	<style type="text/css">
+		#content{
+				width: 100%;
+			}
+			.jumbotron{
+				margin-bottom: 20px;
+			}
+			#daxue{
+				width: 100%;
+			}
+			#content>ul,#daxue>ul{
+				width: 25%;
+				margin: 0;
+				padding: 0;
+				list-style: none;
+
+				float: left;
+			}
+			#content>ul li,#daxue>ul li{
+				margin-bottom: 3px;
+				position: relative;
+				overflow: hidden;
+				/*border: 1px solid red;*/
+			}
+			#content>ul li:hover,#daxue>ul li{
+				cursor: pointer;
+			}
+			.crDiv{
+				background: rgba(0,0,0,.7);
+				position: absolute;
+				left: 0;
+				top: -98%;
+				width: 100%;
+				height: 98%;
+				transition: all 1s linear;
+			}
+			.span{
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+				/*opacity: .3;*/
+			}
+			.scaleone{
+				position: fixed;
+				left: 0;
+				top: 0;
+				z-index: 10;
+				background: rgba(0,0,0,.6);
+			}
+			.selectImg{
+				border:10px solid white;
+				border-color: #FFD6A6;
+				height:80%;
+				margin:5% auto;
+				display: block;
+			}
+			.jieshao{
+				padding: 10px 30px;
+			}
+			.jieshao h2{
+				font-size: 36px;
+				color: forestgreen;
+				text-align: center;
+			}
+			.jieshao p{
+				line-height: 34px;
+				font-size: 24px;
+				color: darkblue;
+				text-indent: 2em;
+				padding: 15px 150px;
+			}
+			.jieshao p span{
+				display: block;
+				height: 60px;
+				line-height: 60px;
+				line-height: 30px;
+				font-size: 28px;
+				color: #0EB29A;
+			}
+			.clearfix:after,.clearfix:before{
+				content: '';
+				display: table;
+			}
+			.clearfix:after{
+				clear: both;
+			}
+			.gaozhong h2{
+				padding: 50px 0;
+				text-align: center;
+				font-size: 35px;
+				color: #39627F;
+				line-height: 60px;
+				height: 60px;
+			}
+			.gaozhong p{
+				padding: 50px 150px;
+				font-size: 24px;
+				color: #8C999A;
+				line-height: 50px;
+			}
+	</style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">
+            魏松
+         </a>
+         <button type="button" name="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+        </div>
+        
+        <p class="navbar-text">
+        	   我就是我不一样的烟火 🎆, fighting!
+        </p>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right" style="margin-top:0">
+            <li><a href="index.html">
+              <span class="glyphicon glyphicon-home"></span>
+              我的首页</a></li>
+            <li><a href="hometown.html">
+              <span class="glyphicon glyphicon-fire"></span>
+              我的家乡</a></li>
+              
+            <li class="active"><a href="#information.html">
+              <span class="glyphicon glyphicon-user"></span>
+              自我介绍</a></li>
+            <!--<li><a href="case.html">
+              <span class="glyphicon glyphicon-bell"></span>
+              学习经历</a></li>-->
+            <li><a href="about.html">
+              <span class="glyphicon glyphicon-tree-conifer"></span>
+              工作经历</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <hgroup>
+          <h1>自我介绍</h1>
+          <h4>只是简介,却从不简单</h4>
+        </hgroup>
+      </div>
+    </div>
+
+    <div>
+    	  
+			<div id="container">
+				<ul id="timeline" class="timeline">
+					<li class="active">
+						<div class="check">
+							<b class="spring"></b>
+							<s></s>
+							<b class="line"></b>
+						</div>
+						<div class="thumb">
+							<img src="images/pic/top1.jpg" alt="">
+							<span>小学时光</span>
+						</div>
+						<div class="content">
+							<b></b>
+							<h3>留级与升学</h3>
+							<p>
+								
+									小学时光在一个寺庙和一个村委会度过,
+									在小学的时候留过级,在上学的时候也比较晚,
+									和我自己家的弟弟妹妹差不多都一起上学.
+									印象中的小学,和弟弟一起上学,下课.
+									五年级莫名的留级
+								
+								
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="check">
+							<b class="spring"></b>
+							<s></s>
+							<b class="line"></b>
+						</div>
+						<div class="thumb">
+							<img src="images/pic/top4.jpg" />
+							<span>中学时光</span>
+						</div>
+						<div class="content">
+							<b></b>
+							<h3>一个最要好的朋友</h3>
+							<p>中学里改变生活状态的人和事,二年级的留级,三年级的复读.一个要好的朋友,和让我继续学习的老师.经历过非典,却没有逃过课,翻过墙,上过网.自评为'三好学生'</p>
+						</div>
+					</li>
+					<li>
+						<div class="check">
+							<b class="spring"></b>
+							<s></s>
+							<b class="line"></b>
+						</div>
+						<div class="thumb">
+							<img src="images/pic/top5.jpg" />
+							<span>高中生活</span>
+						</div>
+						<div class="content">
+							<b></b>
+							<h3>忙碌而又充实</h3>
+							<p>高中中最让人印象深刻的几件事,新校区,百年校庆,各种励志的氛围,各种口号和宣言,充斥着整个校园和每个学生的脸上,但是偶尔也会听到一些不一样的声音,谁参与了打架,谁和谁又发生了什么事之类的
+								
+							</p>
+						</div>
+					</li>
+					<li>
+						<div class="check">
+							<b class="spring"></b>
+							<s></s>
+							<b class="line"></b>
+						</div>
+						<div class="thumb">
+							<img src="images/pic/top6.jpg" />
+							<span>大学时光</span>
+						</div>
+						<div class="content">
+							<b></b>
+							<h3>舒适却又有一丝苦涩</h3>
+							<p>我的学校荆楚理工学院</p>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
+
+    </div>
+  <div id="name">
+    <div class="gaozhong">
+    	    <h2>高中校园</h2>
+    	    <p>
+    	    新野县第一高级中学创办于1907年，距今有一百多年历史，是南阳地区最早的18所重点高中之一，近年来，在县委政府和社会各界的大力支持下，学校以邓小平理论和“三个代表”重要思想为指导，坚持以全面提高教育教学质量为核心、以科学的发展观统领学校全局，师生团结一心，奋力拼搏，不断实现跨越式发展，2007年2月被评定为河南省示范性普通高中，2007年8月，美轮美奂、气势恢宏的新校区建筑群落在县城东郊拔地而起。
+    	    </p>
+    </div>
+    
+    <div id="content" class="clearfix">
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+	</div>
+	
+	<div class="gaozhong">
+		<h2>大学校园</h2>
+		<p>
+			荆楚理工学院是经教育部批准于2007年3月在原荆门职业技术学院、沙洋师范高等专科学校合并基础上建立的一所公立省属本科层次的普通高等学校。学校位于素有“荆楚门户”之称的历史文化名城——荆门中心城区，坐落在风景秀美的白龙山麓。
+		</p>
+	</div>
+	
+	<div id="daxue" class="clearfix">
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+		<ul></ul>
+	</div>
+</div>
+      
+
+
+
+
+
+   <div class="footer" id="footer">
+     <div class="container">
+       <p>
+         企业培训 | 合作事宜 | ©️版权投诉
+       </p>
+       <p>
+         苏 ICP 备123455. ©️ 2009-2016 万事皆空 .Powered by bootstrap
+       </p>
+     </div>
+   </div>
+
+
+
+
+
+
+
+    <script type="text/javascript" src="jquery.min.js">
+
+    </script>
+    <script type="text/javascript" src="bootstrap.min.js">
+
+    </script>
+
+    <script type="text/javascript">
+
+    </script>
+    <script src="js/timeline.js"></script>
+    <script type="text/javascript">
+         	var oBox = document.querySelector('#content');
+			var aUl = oBox.getElementsByTagName('ul');
+			var daxue = document.querySelector('#daxue');
+			var daxueUl = daxue.getElementsByTagName('ul');
+			oBox.style.margin = '0 auto';
+			
+			
+//			window.onscroll = function () {
+//				var visibleH = window.innerHeight || document.documentElement.clientHeight;
+//				var scrollH = document.body.scrollTop || document.documentElement.scrollTop;
+//				var h1 = visibleH + scrollH;
+//				var h2 = document.body.scrollHeight;
+//				if(h1 >= 0.8 * h2) {
+//						if(total <= 80) {
+//							add(10);
+//						} else {
+//							tishi();
+//						}	
+//				}
+//				
+//			}
+			
+			function tishi() {
+				myAlert.style.display = 'block';
+				myAlert.innerHTML = '已经加载全部';
+			}
+
+			function add() {
+				for(var i = 1; i < 21; i ++) {
+					createLi(i,true);
+				}
+			}
+			add();
+			function aa() {
+				for(var i = 1; i < 15; i ++) {
+					createLi(i,false);
+				}
+			}
+			aa();
+			var all = document.getElementById('name')
+			var aLi = all.getElementsByTagName('li');
+			for(var i = 0; i < aLi.length; i ++) {
+				aLi[i].onclick = function () {
+					var scaleOne = document.createElement('div');
+					scaleOne.className = 'scaleone';
+					scaleOne.style.width = 100 + '%';
+					scaleOne.style.height = 100 + '%';
+					document.body.appendChild(scaleOne);
+					var oImg = document.createElement('img');
+					oImg.src = this.lastElementChild.src;
+					console.log(this.lastElementChild.src)
+					oImg.className = 'selectImg';
+					scaleOne.appendChild(oImg);
+					scaleOne.onclick = function () {
+						document.body.removeChild(this);
+					}
+				}
+			}
+			
+			function createLi(num,bool) {
+				var oLi = document.createElement('li');
+				var div = document.createElement('div');
+					div.className = 'crDiv';
+					var span = document.createElement('span');
+					span.className = 'span';
+					div.appendChild(span);
+				    oLi.appendChild(div);
+				var index = 0;
+				
+				var high = randomNum(250,450);
+				oLi.style.height = high + 'px';
+				oLi.style.width = 98 + '%';
+				oLi.style.position = 'relative';
+				
+				
+				var img = document.createElement('img');
+				if(bool) {
+					img.src = 'yigao/xy'+ num +'.jpg';
+				} else {
+					img.src = 'dx/dx'+ num +'.jpg';
+				}
+				
+				img.style.width = '100%';
+				img.style.height = '98%';
+				oLi.appendChild(img);
+				if(bool) {
+					for(var j = 0; j < aUl.length; j ++) {
+						if(aUl[j].offsetHeight < aUl[index].offsetHeight) {
+							index = j;
+						}
+						
+					}
+					aUl[index].appendChild(oLi);
+				} else {
+					for(var j = 0; j < aUl.length; j ++) {
+						if(daxueUl[j].offsetHeight < daxueUl[index].offsetHeight) {
+							index = j;
+						}
+						
+					}
+					daxueUl[index].appendChild(oLi);
+				}
+				
+				
+				oLi.onmouseover = function () {
+					div.style.top = 0 + 'px';	
+				}
+				oLi.onmouseout = function () {
+					div.style.top = -100 + '%';
+				}
+				
+			}
+			function randomNum(x,y){
+				return Math.floor(Math.random() * ( y - x + 1) + x);
+			}
+    </script>
+
+  </body>
+</html>

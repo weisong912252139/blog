@@ -1,53 +1,456 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="style2.css"/>
-	</head>
-	<body>
-		<!-- multistep form -->
-<form id="msform">
-	<!-- progressbar -->
-	<ul id="progressbar">
-		<li class="active">Account Setup</li>
-		<li>Social Profiles</li>
-		<li>Personal Details</li>
-	</ul>
-	<!-- fieldsets -->
-	<fieldset>
-		<h2 class="fs-title">Create your account</h2>
-		<h3 class="fs-subtitle">This is step 1</h3>
-		<input type="text" name="email" placeholder="Email" />
-		<input type="password" name="pass" placeholder="Password" />
-		<input type="password" name="cpass" placeholder="Confirm Password" />
-		<input type="button" name="next" class="next action-button" value="Next" />
-	</fieldset>
-	<fieldset>
-		<h2 class="fs-title">Social Profiles</h2>
-		<h3 class="fs-subtitle">Your presence on the social network</h3>
-		<input type="text" name="twitter" placeholder="Twitter" />
-		<input type="text" name="facebook" placeholder="Facebook" />
-		<input type="text" name="gplus" placeholder="Google Plus" />
-		<input type="button" name="previous" class="previous action-button" value="Previous" />
-		<input type="button" name="next" class="next action-button" value="Next" />
-	</fieldset>
-	<fieldset>
-		<h2 class="fs-title">Personal Details</h2>
-		<h3 class="fs-subtitle">We will never sell it</h3>
-		<input type="text" name="fname" placeholder="First Name" />
-		<input type="text" name="lname" placeholder="Last Name" />
-		<input type="text" name="phone" placeholder="Phone" />
-		<textarea name="address" placeholder="Address"></textarea>
-		<input type="button" name="previous" class="previous action-button" value="Previous" />
-		<input type="submit" name="submit" class="submit action-button" value="Submit" />
-	</fieldset>
-</form>
+  <head>
+    <meta charset="utf-8">
+    <title>响应式轮播图</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+      <link rel="stylesheet" href="dist/css/bootstrap.min.css" media="screen" title="no title">
+      <link rel="stylesheet" href="style.css" media="screen" title="no title">
+      <style type="text/css">
+      	.thumbnail img{
+				/*max-height: 130px;*/
+				transition: all 1s linear;
+				position: relative;
+			}
+			.thumbnail img:hover{
+				
+				transform: scale(2);
+				/*left: 50%;
+				top: 50%;*/
+				border: 1px solid darkgray;
+				box-shadow: 2px 2px 3px darkgray;
+				z-index: 10;
+			}
+			#mycarousel{
+				padding: 10px 0;
+			}
+			.intr{
+				margin: 15px auto;
+				/*background: green;*/
+				/*text-align: center;*/
+			}
+			.intr dt{
+				font-size: 26px;
+				color: #0060BF;
+				height: 45px;
+				line-height: 45px;
+			}
+			.intr dd{
+				font-size: 24px;
+				color: darkgray;
+				line-height: 42px;
+			}
+      </style>
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">
+            魏松
+         </a>
+         <button type="button" name="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+        </div>
+        
+        <p class="navbar-text">
+        	   我就是我不一样的烟火 🎆, fighting!
+        </p>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right" style="margin-top:0">
+            <li class="active"><a href="#">
+              <span class="glyphicon glyphicon-home"></span>
+              我的首页</a></li>
+	        <li><a href="hometown.html">
+	          <span class="glyphicon glyphicon-fire"></span>
+	          我的家乡</a></li>
+            <li><a href="information.html">
+              <span class="glyphicon glyphicon-user"></span>
+              自我介绍</a></li>
+            <!--<li><a href="case.html">
+              <span class="glyphicon glyphicon-bell"></span>
+              学习经历</a></li>-->
+            <li><a href="about.html">
+              <span class="glyphicon glyphicon-tree-conifer"></span>
+              工作经历</a></li>
+          </ul>
+        </div>
 
-<!-- jQuery -->
-<script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
-<!-- jQuery easing plugin -->
-<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
-  <script src="index2.js" type="text/javascript" charset="utf-8"></script>
-	</body>
+      </div>
+    </div>
+
+
+    <!--轮播图  -->
+
+
+   <div class="carousel slide" id="mycarousel">
+      <ol class="carousel-indicators">
+        <li data-target="#mycarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#mycarousel" data-slide-to="1"></li>
+        <li data-target="#mycarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active" style="background:rgba(54,97,227,.7)">
+          <img src="工作/bo1.jpg" alt="" />
+        </div>
+        <div class="item" style="background:rgba(241,244,224,.7)">
+          <img src="工作/bo2.jpg" alt="" />
+        </div>
+        <div class="item" style="background:rgba(241,233,214,.3)">
+          <img src="工作/bo9.jpg" alt="" />
+        </div>
+      </div>
+      <a href="#mycarousel" data-slide="prev" class="carousel-control left">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a href="#mycarousel" data-slide="next" class="carousel-control right">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+
+
+    <!-- 内容的第一部分 -->
+
+    <div class="tab1">
+      <div class="container">
+      	
+        <h2 class="tab-h2">我们为何选择HTML这门课程</h2>
+        <p class="tab-p">
+          学电脑很有前途，因为现在IT行业发展火爆，强大的电脑功能,带领人类腾飞!
+
+        </p>
+         <div class="row">
+	          <div class="col-md-4 col-sm-6">
+	            <img src="工作/yidong.jpg" class="auto img-responsive center-block" alt="" />
+	          </div>
+	          <div class="text col-md-8 col-sm-8">
+	            <h3 class="text-center">移动通信技术的普及</h3>
+	            <p class="well">
+	                  手机的普及,移动端的页面的应用越来越广泛
+	            </p>
+	          </div>
+        </div>
+        <div class="row">
+	          <div class="col-md-4 col-sm-6">
+	            <img src="工作/weixin.jpg" class="auto img-responsive center-block" alt="" />
+	          </div>
+	          <div class="text col-md-8 col-sm-8">
+	            <h3 class="text-center">微信的广泛应用</h3>
+	            <p class="well">
+	                  关注前沿先进的技术的都应该知道微信小程序的开发变得触手可及,从而让前端有了华丽转身
+	            </p>
+	          </div>
+        </div>
+        <div class="row">
+	          <div class="col-md-4 col-sm-6">
+	            <img src="工作/jisuanji.jpg" class="auto img-responsive center-block" alt="" />
+	          </div>
+	          <div class="text col-md-8 col-sm-8">
+	            <h3 class="text-center">计算机技术的深入人心</h3>
+	            <p class="well">
+	                  各种软件硬件设施改变了人们的生活方式,所以对计算机有一种莫名的认可.
+	            </p>
+	          </div>
+        </div>
+   
+     
+      </div>
+      </div>
+    </div>
+	   
+    
+    <div class="tab4">
+      <div class="container">
+      	<h2 class="tab-h2">我为何选择<smap>HTML5</smap>这门课程</h2>
+        <p class="tab-p">
+          Thought is already is late, exactly is the earliest time.
+          觉得为时已晚的时候，恰恰是最早的时候。
+        </p>
+        
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <img src="工作/gongzuo1.jpg" class="auto img-responsive center-block" alt="" />
+          </div>
+          <div class="text col-md-8 col-sm-8">
+            <h3 class="text-center">大学毕业后找工作的不顺利</h3>
+            <p class="well">
+                  大学毕业之后没有一技之长,只能拿着一张毕业证走向社会,自身的能力并没有得到提升.
+              在找与专业对口的行业的时候显得过于稚嫩,毫无经验,当学徒也只是去做免费的劳动力,其实并没有学到关键的本领.(从我一个同学的切身经历得出的经验教训,后来转行做IOS)
+            </p>
+          </div>
+
+
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <img src="工作/7.jpg" class="auto img-responsive center-block" alt="" />
+          </div>
+          <div class="text col-md-8 col-sm-8">
+            <h3 class="text-center">工作不如意</h3>
+            <p class="well">
+            	找到工作之后,工作的性质太过单一,技术要求太低,想做一份有意义,自己感觉还算靠谱,有发展机会的行业,所以就想学一下.领导就是面向对象
+            </p>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <img src="工作/gongzuo10.jpg" class="auto img-responsive center-block" alt="" />
+          </div>
+          <div class="text col-md-8 col-sm-8">
+            <h3 class="text-center">同学介绍</h3>
+            <p class="well">
+            	因为自己想改变一下,换一个状态,重新开始,换一个方向重新奋斗.
+            </p>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <img src="工作/gongzuo11.jpg" class="auto img-responsive center-block" alt="" />
+          </div>
+          <div class="text col-md-8 col-sm-8">
+            <h3 class="text-center">一个意外的事件</h3>
+            <p class="well">
+            上一个培训班发生的各种不顺利的事情,导致学习的流产,虽然上一个培训班不负责的跑路了,但是不幸中的幸运是,蓝鸥向我们伸出了援助之手,所以感谢对我们伸出援助之手的朋友.
+            </p>
+          </div>
+       </div>
+      
+      <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <img src="工作/gongzuo9.jpg" class="auto img-responsive center-block" alt="" />
+          </div>
+          <div class="text col-md-8 col-sm-8">
+            <h3 class="text-center">相信自己,永远充满动力</h3>
+            <p class="well">
+                 既然选择改变,选择相信自己,那就放心包袱,好好学习.坚信让自己一直走在进步的路上,从不退缩.
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="container" id="showImg">
+		  <div class="page-header">
+		  	<h2>关于工作和学习
+		  		<small>离开一个地方,风景就不再属于你;错过一个人,那人便再与你无关。</small>
+		  	</h2>
+		  </div>
+	      <div class="row">
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/1.jpg" alt="" />
+	            <div class="caption text-center">德昌电机培训</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/2.jpg" alt="" />
+	            <div class="caption text-center">德昌电机工作环境</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/3.jpg" alt="" class="img-responsive" />
+	            <div class="caption text-center">德昌电机</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/4.jpg" alt="" />
+	            <div class="caption text-center">温家宝主席</div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/5.jpg" alt="" />
+	            <div class="caption text-center">产品</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/6.jpg" alt="" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/7.jpg" alt="" class="img-responsive" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/8.jpg" alt="" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/9.jpg" alt="" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/gongzuo1.jpg" alt="" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/gongzuo2.jpg" alt="" class="img-responsive" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/gongzuo3.jpg" alt="" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/gongzuo4.jpg" alt="" class="img-responsive" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/gongzuo5.jpg" alt="" class="img-responsive" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/gongzuo6.jpg" alt="" class="img-responsive" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/gongzuo7.jpg" alt="" class="img-responsive" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	        <div class="col-md-3 col-sm-4 col-xs-6">
+	          <div class="thumbnail">
+	            <img src="工作/gongzuo8.jpg" alt="" class="img-responsive" />
+	            <div class="caption text-center">介绍</div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+
+    <!-- 第二部分 -->
+    <div class="tab2">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 col-sm-6 tab2-img">
+            <img src="images/13.jpg" class="auto img-responsive center-block" alt="" />
+          </div>
+
+          <div class="text col-md-6 col-sm-6 tab2-text">
+            <h3>良好的学习体系</h3>
+            <p>
+              经过管理学大师层层把关,让你的企业突飞猛进.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--第三部分  -->
+
+    <div class="tab3">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-6">
+            <img src="images/15.jpg" class="auto img-responsive center-block" alt="" />
+          </div>
+          <div class="text col-md-6 col-sm-6">
+            <h3>良好的学习环境</h3>
+            <p>
+              近朱者赤近墨者黑,
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+
+
+   <div class="footer" id="footer">
+     <div class="container">
+       <p>
+         企业培训 | 合作事宜 | ©️版权投诉
+       </p>
+       <p>
+         苏 ICP 备123455. ©️ 2009-2016 万事皆空 .Powered by bootstrap
+       </p>
+     </div>
+   </div>
+
+
+
+
+
+
+
+    <script type="text/javascript" src="jquery.min.js">
+
+    </script>
+    <script type="text/javascript" src="bootstrap.min.js">
+
+    </script>
+
+    <script type="text/javascript">
+      $(function() {
+        // 轮播自动播放
+//      $('#mycarousel').carousel({
+//        interval:2000,
+//      })
+        // 设置上一页下一页的垂直居中
+
+        // $('.carousel-control').css('line-height',$('.carousel-inner img').height() + 'px');
+        // // 当浏览器窗口改变大小的时候要重新改变这两个按钮的位置
+        // $(window).resize(function() {
+        //   // 获取高度的时候只能获取到第一张的高度不能获取后边的高度,如果没有用eq()的话,所以要有一个判断,当他的line-hiehgt为零的时候重新赋值
+        //   var $height = $('.carousel-inner img').eq(0).height() ||
+        //                 $('.carousel-inner img').eq(1).height() ||
+        //                 $('.carousel-inner img').eq(2).height();
+        //   $('.carousel-control').css('line-height',$height + 'px');
+        //
+        // })
+
+          //设置文字垂直居中 在谷歌浏览器架子图片的顺序问题,导致高度无法获取,如果是服务器环境下要加上$(window).load(function(){})
+
+          $('.text').eq(0).css('margin-top',($('.auto').eq(0).height() - $('.text').eq(0).height())/2 + 'px');
+          $(window).resize(function(){
+            $('.text').eq(0).css('margin-top',($('.auto').eq(0).height() - $('.text').eq(0).height())/2 + 'px');
+          });
+          $('.text').eq(1).css('margin-top',($('.auto').eq(1).height() - $('.text').eq(1).height())/2 + 'px');
+          $(window).resize(function(){
+            $('.text').eq(1).css('margin-top',($('.auto').eq(1).height() - $('.text').eq(1).height())/2 + 'px');
+          });
+          
+         
+
+
+      })
+    </script>
+
+  </body>
 </html>
